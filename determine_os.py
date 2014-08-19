@@ -84,7 +84,9 @@ def main():
 		df.loc[i,'devicetype'] = os_type
 	#print df.at[0, 'responseid']
 	for x in sorted(get_column_levels(df, COLUMNS_DICT['os'])):
-		print x
+		print "Warning: uknown device type for entries labeled   {}".format(x)
+	# To save space I'm only going to write an id variable and the newly created devicetype
+	df = df[['responseid', 'devicetype']]
 	df.to_stata(os.path.join(ROOT_DIR,'{}_devices.dta'.format(filename.replace(".dta",""))), write_index=False)
 
 if __name__ == "__main__":
