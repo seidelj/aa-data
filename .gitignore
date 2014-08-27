@@ -1,3 +1,6 @@
 *.dta
 raw
 venv
+*~
+*.swp
+*.swo
