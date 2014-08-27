@@ -4,7 +4,7 @@ The script will decode responses answers (A, B, C,...etc) to the the string valu
 
 ## Running the script ##
 	#Follow instructions in parent dir on activating virtual environment
-  #Make sure your command directory is set to this dir
+  	#Make sure your command directory is set to this dir
   
 	$(venv) python decodedata.py
 	
