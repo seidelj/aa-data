@@ -44,11 +44,11 @@ id,pre_or_post,question_number,choice_key,choice_value,allow_multiple
 43,pre,59,c,between one hour and two hours per day,0
 44,pre,59,d,between two and three hours per day,0
 45,pre,59,e,more than three hours per day,0
-46,pre,60,a,sports,0
-47,pre,60,b,clubs,0
-48,pre,60,c,"music lessons, musical group, or dance",0
-49,pre,60,d,other lessons or activities,0
-50,pre,60,e,none,0
+46,pre,60,a,sports,1
+47,pre,60,b,clubs,1
+48,pre,60,c,"music lessons, musical group, or dance",1
+49,pre,60,d,other lessons or activities,1
+50,pre,60,e,none,1
 51,pre,61,a,none,0
 52,pre,61,b,less than one hour per day,0
 53,pre,61,c,between one hour and two hours per day,0
@@ -61,106 +61,111 @@ id,pre_or_post,question_number,choice_key,choice_value,allow_multiple
 60,pre,62,e,none,1
 61,pre,63,a,yes,0
 62,pre,63,b,no,0
-63,pre,64,a,none,0
-64,pre,64,b,less than one hour per day,0
-65,pre,64,c,between one hour and two hours per day,0
-66,pre,64,d,between two and three hours per day,0
-67,pre,64,e,more than three hours per day,0
-68,pre,65,a,none,0
-69,pre,65,b,less than one hour per day,0
-70,pre,65,c,between one hour and two hours per day,0
-71,pre,65,d,between two hours and three hours per day,0
-72,pre,65,e,more than three hours per day,0
-73,pre,66,a,none,0
-74,pre,66,b,less than one hour per day on weekends,0
-75,pre,66,c,between one hour and two hours per day on weekends,0
-76,pre,66,d,between two and three hours per day on weekends,0
-77,pre,66,e,more than three hours per day on weekends,0
-78,pre,67,a,none,0
-79,pre,67,b,less than one hour per day on weekends,0
-80,pre,67,c,between one hour and two hours per day on weekends,0
-81,pre,67,d,between two and three hours per day on weekends,0
-82,pre,67,e,more than three hours per day on weekends,0
-83,pre,68,a,none,0
-84,pre,68,b,less than one hour per day on weekends,0
-85,pre,68,c,between one hour and two hours per day on weekends,0
-86,pre,68,d,between two and three hours per day on weekends,0
-87,pre,68,e,more than three hours per day on weekends,0
-88,pre,69,a,none,
-89,pre,69,b,less than one hour per day on weekends,
-90,pre,69,c,between one hour and two hours per day on weekends,
-91,pre,69,d,between two and three hours per day on weekends,
-92,pre,69,e,more than three hours per day on weekends,
-93,post,51,a,my mom,1
-94,post,51,b,my dad,1
-95,post,51,c,my brother,1
-96,post,51,d,my sister,1
-97,post,51,e,none of the above,1
-98,post,52,a,my grandparent,1
-99,post,52,b,my tutor,1
-100,post,52,c,my friend,1
-101,post,52,d,another person helped me,1
-102,post,52,e,none of the above,1
-103,post,53,a,none of the above,0
-104,post,53,b,less than one hour per day,0
-105,post,53,c,between one hour and two hours per day,0
-106,post,53,d,between two and three hours per day,0
-107,post,53,e,more than three hours per day,0
-108,post,54,a,sports,1
-109,post,54,b,clubs,1
-110,post,54,c,"music lessons, musical group, or dance",1
-111,post,54,d,other lessons or activities,1
-112,post,54,e,none of the above,1
-113,post,55,a,none,0
-114,post,55,b,less than one hour per day,0
-115,post,55,c,between one hour and two hours per day,0
-116,post,55,d,between two and three hours per day,0
-117,post,55,e,more than three hours per day,0
-118,post,56,a,none,0
-119,post,56,b,less than one hour per day,0
-120,post,56,c,between one hour and two hours per day,0
-121,post,56,d,between two and three hours per day,0
-122,post,56,e,more than three hours per day,0
-123,post,57,a,none,0
-124,post,57,b,less than one hour per day,0
-125,post,57,c,between one hour and two hours per day,0
-126,post,57,d,between two and three hours per day,0
-127,post,57,e,more than three hours per day,0
-128,post,58,a,none,0
-129,post,58,b,less tahn one hour per day,0
-130,post,58,c,between one hour and two hours per day,0
-131,post,58,d,between two and three hours per day,0
-132,post,58,e,more than three hours per day,0
-133,post,59,a,none,0
-134,post,59,b,less than one hour per day,0
-135,post,59,c,between one hour and two hours per day,0
-136,post,59,d,between two and three hours per day,0
-137,post,59,e,more than three hours per day,0
-138,post,60,a,none,0
-139,post,60,b,less than one hour per day,0
-140,post,60,c,between one hour and two hours per day,0
-141,post,60,d,between two and three hours per day,0
-142,post,60,e,more than three hours per day,0
-143,post,61,a,none,0
-144,post,61,b,less tahn one hour per day,0
-145,post,61,c,between one hour and two hours per day,0
-146,post,61,d,between two and three hours per day,0
-147,post,61,e,more than three hours per day,0
-148,post,62,a,i like math,0
-149,post,62,b,i wanted to earn money,0
-150,post,62,c,i liked the challenge of doing hard problems,0
-151,post,62,d,i liked the challenge of finishing a lot of problems before time ran out,0
-152,post,62,e,none of the above,0
-153,post,63,a,i like math,0
-154,post,63,b,i wanted to earn money,0
-155,post,63,c,i liked the challenge of doing hard problems,0
-156,post,63,d,i liked the challenge of finishing a lot of problems before the time ran out,0
-157,post,63,e,none of the above,0
-158,post,64,a,"yes, i understand it a lot better now",0
-159,post,64,b,"yes, i understand it a little better now",0
-160,post,64,c,i feel like i understand math about the same as i did before,0
-161,post,64,d,"no, i feel like i understand math less than i did before",0
-162,post,65,a,"yes, i like math a lot more now",0
-163,post,65,b,"yes, i like math a little better now",0
-164,post,65,c,i like math about the same as i did before,0
-165,post,65,d,"no, i like math less than i did before",0
+63,pre,63,c,NOT A SELECTION,0
+64,pre,63,d,NOT A SELECTION,0
+65,pre,63,e,NOT A SELECTION,0
+66,pre,64,a,none,0
+67,pre,64,b,less than one hour per day,0
+68,pre,64,c,between one hour and two hours per day,0
+69,pre,64,d,between two and three hours per day,0
+70,pre,64,e,more than three hours per day,0
+71,pre,65,a,none,0
+72,pre,65,b,less than one hour per day,0
+73,pre,65,c,between one hour and two hours per day,0
+74,pre,65,d,between two hours and three hours per day,0
+75,pre,65,e,more than three hours per day,0
+76,pre,66,a,none,0
+77,pre,66,b,less than one hour per day on weekends,0
+78,pre,66,c,between one hour and two hours per day on weekends,0
+79,pre,66,d,between two and three hours per day on weekends,0
+80,pre,66,e,more than three hours per day on weekends,0
+81,pre,67,a,none,0
+82,pre,67,b,less than one hour per day on weekends,0
+83,pre,67,c,between one hour and two hours per day on weekends,0
+84,pre,67,d,between two and three hours per day on weekends,0
+85,pre,67,e,more than three hours per day on weekends,0
+86,pre,68,a,none,0
+87,pre,68,b,less than one hour per day on weekends,0
+88,pre,68,c,between one hour and two hours per day on weekends,0
+89,pre,68,d,between two and three hours per day on weekends,0
+90,pre,68,e,more than three hours per day on weekends,0
+91,pre,69,a,none,0
+92,pre,69,b,less than one hour per day on weekends,0
+93,pre,69,c,between one hour and two hours per day on weekends,0
+94,pre,69,d,between two and three hours per day on weekends,0
+95,pre,69,e,more than three hours per day on weekends,0
+96,post,51,a,my mom,1
+97,post,51,b,my dad,1
+98,post,51,c,my brother,1
+99,post,51,d,my sister,1
+100,post,51,e,none of the above,1
+101,post,52,a,my grandparent,1
+102,post,52,b,my tutor,1
+103,post,52,c,my friend,1
+104,post,52,d,another person helped me,1
+105,post,52,e,none of the above,1
+106,post,53,a,none,0
+107,post,53,b,less than one hour per day,0
+108,post,53,c,between one hour and two hours per day,0
+109,post,53,d,between two and three hours per day,0
+110,post,53,e,more than three hours per day,0
+111,post,54,a,sports,1
+112,post,54,b,clubs,1
+113,post,54,c,"music lessons, musical group, or dance",1
+114,post,54,d,other lessons or activities,1
+115,post,54,e,none,1
+116,post,55,a,none,0
+117,post,55,b,less than one hour per day,0
+118,post,55,c,between one hour and two hours per day,0
+119,post,55,d,between two and three hours per day,0
+120,post,55,e,more than three hours per day,0
+121,post,56,a,none,0
+122,post,56,b,less than one hour per day,0
+123,post,56,c,between one hour and two hours per day,0
+124,post,56,d,between two and three hours per day,0
+125,post,56,e,more than three hours per day,0
+126,post,57,a,none,0
+127,post,57,b,less than one hour per day,0
+128,post,57,c,between one hour and two hours per day,0
+129,post,57,d,between two and three hours per day,0
+130,post,57,e,more than three hours per day,0
+131,post,58,a,none,0
+132,post,58,b,less than one hour per day,0
+133,post,58,c,between one hour and two hours per day,0
+134,post,58,d,between two and three hours per day,0
+135,post,58,e,more than three hours per day,0
+136,post,59,a,none,0
+137,post,59,b,less than one hour per day,0
+138,post,59,c,between one hour and two hours per day,0
+139,post,59,d,between two and three hours per day,0
+140,post,59,e,more than three hours per day,0
+141,post,60,a,none,0
+142,post,60,b,less than one hour per day,0
+143,post,60,c,between one hour and two hours per day,0
+144,post,60,d,between two and three hours per day,0
+145,post,60,e,more than three hours per day,0
+146,post,61,a,none,0
+147,post,61,b,less than one hour per day,0
+148,post,61,c,between one hour and two hours per day,0
+149,post,61,d,between two and three hours per day,0
+150,post,61,e,more than three hours per day,0
+151,post,62,a,i like math,0
+152,post,62,b,i wanted to earn money,0
+153,post,62,c,i liked the challenge of doing hard problems,0
+154,post,62,d,i liked the challenge of finishing a lot of problems before time ran out,0
+155,post,62,e,none of the above,0
+156,post,63,a,i like math,0
+157,post,63,b,i wanted to earn money,0
+158,post,63,c,i liked the challenge of doing hard problems,0
+159,post,63,d,i liked the challenge of finishing a lot of problems before the time ran out,0
+160,post,63,e,none of the above,0
+161,post,64,a,"yes, i understand it a lot better now",0
+162,post,64,b,"yes, i understand it a little better now",0
+163,post,64,c,i feel like i understand math about the same as i did before,0
+164,post,64,d,"no, i feel like i understand math less than i did before",0
+165,post,64,e,NOT A SELECTION,0
+166,post,65,a,"yes, i like math a lot more now",0
+167,post,65,b,"yes, i like math a little better now",0
+168,post,65,c,i like math about the same as i did before,0
+169,post,65,d,"no, i like math less than i did before",0
+170,post,65,e,NOT A SELECTION,0

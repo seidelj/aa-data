@@ -38,16 +38,16 @@ def decode_answers():
 		parsedQuestionField = instance.question.split('_question')
 		surveykey = session.query(SurveyKey.choice_value).filter(SurveyKey.choice_key == str(instance.choice_key).lower()).filter(SurveyKey.pre_or_post == str(parsedQuestionField[0])).filter(SurveyKey.question_number == str(parsedQuestionField[1]))
 		try:
-			surveykey.one()
+			instance.choice_value = surveykey.one()
 		except:
 			print instance.id, instance.choice_key, parsedQuestionField
 
 def main():
-#	for i in range(len(DF.index)):
-#		observation = DF.loc[i]
-#		answers = get_letter_answers(observation)
-#		parse_letter_answers(observation['userid'], answers)
+	for i in range(len(DF.index)):
+		observation = DF.loc[i]
+		answers = get_letter_answers(observation)
+		parse_letter_answers(observation['userid'], answers)
 	decode_answers()
-	#session.commit()
+	session.commit()
 if __name__ == "__main__":
 	main()
