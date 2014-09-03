@@ -4,5 +4,6 @@ venv
 *~
 *.swp
 *.swo
-surveys/out/
+surveys/out/*.csv
+
 
