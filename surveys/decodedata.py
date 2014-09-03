@@ -25,11 +25,11 @@ def get_letter_answers(obs):
 def parse_letter_answers(user, answers):
 	#answers is listDict where key = questions and value = letter answer
 	for a in answers:
-		value = str(a.values()[0])
-		if value != "BLANK" and value != 'nan':
-			valueList = value.replace(')',"").replace('(',"").split(',')
-			issue_flag = 1 if len(valueList) > 1 and QUESTION_DICT[a.keys()[0]] == '0' else 0
-			for v in valueList:
+		letterAnswer = str(a.values()[0])
+		if letterAnswer != "BLANK" and letterAnswer != 'nan':
+			answerList = letterAnswer.replace(')',"").replace('(',"").split(',')
+			issue_flag = 1 if len(answerList) > 1 and QUESTION_DICT[a.keys()[0]] == '0' else 0
+			for v in answerList:
 				surveydata = SurveyData(userid=user, question=a.keys()[0], choice_key=v, issue_flag=issue_flag)
 				session.add(surveydata)
 
