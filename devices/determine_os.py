@@ -1,9 +1,10 @@
-import os
+import os, sys
 import pandas as pd
 from user_agents import parse
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 RAW_DATA = os.path.join(ROOT_DIR, 'raw')
+OUT_DIR = os.path.join(ROOT_DIR, 'out')
 
 COLUMNS_DICT = {
     'browser': u'bmi_browser',
@@ -60,11 +61,11 @@ def check_useragent_is(ua):
 		return False
 
 def determine_os_type(obs, resolved=False):
-	ua_string = obs[COLUMNS_DICT['useragent']]
+	ua_string = str(obs[COLUMNS_DICT['useragent']])	
 	user_agent = parse(ua_string)
 	check_status = check_useragent_is(user_agent)
 	if check_status == False:
-		check_status = check_obvious_systems(obs[COLUMNS_DICT['os']])
+		check_status = check_obvious_systems(str(obs[COLUMNS_DICT['os']]))
 		if check_status[0] == False:
 			return check_resolution(obs[COLUMNS_DICT['resolution']]) 
 		else:
@@ -76,7 +77,15 @@ def determine_os_type(obs, resolved=False):
 def main():
 	print "Enter a filename"
 	filename = raw_input()
-	df = pd.read_stata(os.path.join(RAW_DATA, filename))
+	if ".dta" in filename:
+		df = pd.read_stata(os.path.join(RAW_DATA, filename))
+		# I want to treat these as string values rather than actually missing
+	elif ".csv" in filename:
+		df = pd.read_csv(os.path.join(RAW_DATA, filename))
+		df.columns = [x.lower() for x in df.columns]
+		df.fillna("missing")
+	else:
+		sys.exit("File type not detected or supported.  .csv or .dta accepted")
 	deviceList = []
 	for i in range(len(df.index)):
 		observation = df.loc[i]
@@ -87,7 +96,7 @@ def main():
 		print "Warning: uknown device type for entries labeled   {}".format(x)
 	# To save space I'm only going to write an id variable and the newly created devicetype
 	df = df[['responseid', 'devicetype']]
-	df.to_stata(os.path.join(ROOT_DIR,'{}_devices.dta'.format(filename.replace(".dta",""))), write_index=False)
+	df.to_stata(os.path.join(OUT_DIR,'{}_devices.dta'.format(filename.replace(".dta",""))), write_index=False)
 
 if __name__ == "__main__":
     main()
