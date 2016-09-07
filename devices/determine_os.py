@@ -65,9 +65,16 @@ def determine_os_type(obs, resolved=False):
 	user_agent = parse(ua_string)
 	check_status = check_useragent_is(user_agent)
 	if check_status == False:
-		check_status = check_obvious_systems(str(obs[COLUMNS_DICT['os']]))
+		try:
+			check_status = check_obvious_systems(str(obs[COLUMNS_DICT['os']]))
+		except KeyError:
+			check_status = check_obvious_systems(str(user_agent.device.family))
 		if check_status[0] == False:
-			return check_resolution(obs[COLUMNS_DICT['resolution']]) 
+			try:
+				return check_resolution(obs[COLUMNS_DICT['resolution']]) 
+			except KeyError:
+				print "No Resoultion info provide"
+				return check_status[1]
 		else:
 			return check_status[1]		
 	else:	
@@ -82,20 +89,23 @@ def main():
 		# I want to treat these as string values rather than actually missing
 	elif ".csv" in filename:
 		df = pd.read_csv(os.path.join(RAW_DATA, filename))
-		df.columns = [x.lower() for x in df.columns]
 		df.fillna("missing")
 	else:
 		sys.exit("File type not detected or supported.  .csv or .dta accepted")
+	df.columns = [x.lower() for x in df.columns]
 	deviceList = []
 	for i in range(len(df.index)):
 		observation = df.loc[i]
 		os_type = determine_os_type(observation)
 		df.loc[i,'devicetype'] = os_type
 	#print df.at[0, 'responseid']
-	for x in sorted(get_column_levels(df, COLUMNS_DICT['os'])):
+	for x in sorted(get_column_levels(df, COLUMNS_DICT['useragent'])):
 		print "Warning: uknown device type for entries labeled   {}".format(x)
 	# To save space I'm only going to write an id variable and the newly created devicetype
-	df = df[['responseid', 'devicetype']]
+	try:
+		df = df[['responseid', 'devicetype','bmi_useragent']]
+	except KeyError:
+		df = df[['id', 'devicetype', 'bmi_useragent' ]]
 	df.to_stata(os.path.join(OUT_DIR,'{}_devices.dta'.format(filename.replace(".dta","").replace(".csv",""))), write_index=False)
 
 if __name__ == "__main__":
